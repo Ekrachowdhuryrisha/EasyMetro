@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Recharge Metro Card</h2>
+<form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Recharge</button></form>
+<a href="{% url 'history' %}">View History</a>
+{% endblock %}

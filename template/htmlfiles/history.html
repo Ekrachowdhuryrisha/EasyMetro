@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Recharge History</h2>
+<ul>
+{% for r in recharges %}
+<li>{{ r.timestamp }} — {{ r.metro_card_number }} — {{ r.amount }} Tk — {{ r.payment_method }}</li>
+{% empty %}
+<li>No recharges yet.</li>
+{% endfor %}
+</ul>
+<a href="{% url 'recharge' %}">New Recharge</a>
+{% endblock %}
