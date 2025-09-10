@@ -6,6 +6,9 @@ from .forms import RegisterForm, RechargeForm
 from .models import Recharge
 
 
+def home(request):
+	return render(request, 'htmlfiles/home.html')
+
 def register(request):
 	if request.method == 'POST':
 		form = RegisterForm(request.POST)
