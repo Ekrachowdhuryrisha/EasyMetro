@@ -1,6 +1,4 @@
-
-
-    /* General */
+/* General */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,15 +10,20 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 4px 10px;  
     background: #ffffff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: #2563eb;
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    margin-left: 10px;
+    height: 40px;   
+    width: auto;
+    display: block;
 }
 
 /* Navbar Buttons */
@@ -64,14 +67,17 @@ body {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 160px 60px;
+    padding: 40px 60px 160px;
     background: linear-gradient(to right, #9bbff4, #d2e1f5);
+    position: relative;
 }
+
 
 .hero h1 {
     font-size: 64px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 100px; /* Adjusted to account for larger logo */
 }
 
 .hero .highlight {
@@ -81,12 +87,12 @@ body {
 .hero p {
     max-width: 600px;
     margin: 0 auto 30px;
-    font-size: 16px;
+    font-size: 20px;
     color: #444;
 }
 
 .hero-buttons a {
-    margin: 0 10px;
+    margin: 0 20px;
 }
 
 /* Features Section */

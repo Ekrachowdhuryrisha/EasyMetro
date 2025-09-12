@@ -1,0 +1,59 @@
+{% load static %}
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">
+            <img src="{% static 'images/EasyMetroLogo.png' %}" alt="EasyMetro Logo" class="logo-img">
+        </span>
+    </div>
+    <div class="nav-right">
+        <a href="{% url 'login' %}" class="btn-link">Login</a>
+        <a href="{% url 'register' %}" class="btn-primary">Sign Up</a>
+    </div>
+</nav>
+
+<style>
+    /* Navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 10px;
+        background: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-left, .nav-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 40px;
+        width: auto;
+        display: block;
+    }
+
+    .nav-right a {
+        margin-left: 15px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .btn-link {
+        color: #2563eb;
+    }
+
+    .btn-primary {
+        background: #2563eb;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .btn-primary:hover {
+        background: #1e4db7;
+    }
+</style>
