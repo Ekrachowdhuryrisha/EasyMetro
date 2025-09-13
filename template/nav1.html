@@ -17,9 +17,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 4px 10px;
+        padding: 4px 0; /* Removed horizontal padding (10px) to eliminate gaps */
         background: #ffffff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        width: 100%; /* Ensure full width */
     }
 
     .nav-left, .nav-right {
@@ -31,6 +32,7 @@
         height: 40px;
         width: auto;
         display: block;
+        margin-left: 20px;
     }
 
     .nav-right a {
@@ -38,6 +40,7 @@
         text-decoration: none;
         font-size: 14px;
         font-weight: 500;
+        margin-right: 20px;
     }
 
     .btn-link {

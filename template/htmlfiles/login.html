@@ -1,10 +1,128 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login - EasyMetro{% endblock %}
+
 {% block content %}
-<h2>Login</h2>
-<form method="post">{% csrf_token %}
-Username: <input type="text" name="username"><br>
-Password: <input type="password" name="password"><br>
-<button type="submit">Login</button>
-</form>
-<a href="{% url 'register' %}">Register</a>
+    <div class="login-container">
+        <form class="login-form" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <h2>Login to Your Account</h2>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-btn" formaction="user.html">Login</button>
+            <p class="register-link">Don't have an account? <a href="register.html">Register here</a></p>
+        </form>
+    </div>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #9bbff4, #d2e1f5); /* Gradient blue background */
+        }
+
+        .navbar {
+            position: flex;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .footer {
+            position: flex;
+            bottom: 0;
+            z-index: 1000;
+        }
+
+        .content {
+            flex: 1 0 auto;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 20px 0;
+            flex: 1 0 auto;
+        }
+
+        .login-form {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 20px 0;
+        }
+
+        .login-form h2 {
+            font-size: 22px;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 13px;
+            box-sizing: border-box;
+            line-height: 1.2;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 4px rgba(37, 99, 235, 0.3);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 8px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background-color: #1e4db7;
+        }
+
+        .register-link {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .register-link a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
 {% endblock %}
